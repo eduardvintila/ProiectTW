@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="stil.css">
+  <title>Sisteme de Operare Linux</title>
+  <script type="text/javascript" src="logs.js"></script>
+  <script type="text/javascript" src="titlu.js"></script>
+</head>
+
+
+<body onload="animatieTitlu()">
+  <%- include('navbar', {user: locals.user}) %>
+
+  <section>
+    <div class="titlu">
+      <br>
+      <img id="linux-distros" src="linux-distros.png" alt="distributii">
+    </div>
+    <br><br><br>
+    <div class="continut">
+      <p> Acest site are scopul de a te ajuta să alegi o distribuție de Linux potrivită pentru tine.</p>
+      <p> Folosește meniul de mai sus pentru a naviga pe site . </p>
+    </div>
+  </section>
+
+  <% if (locals.user == "admin"){ %>
+  <script>
+    function afisare_logs() {
+      let eventuri = JSON.parse(sessionStorage.getItem('eventuri'));
+      let old_eventuri = document.getElementsByClassName('event');
+      while (old_eventuri[0]) {
+        old_eventuri[0].parentNode.removeChild(old_eventuri[0]);
+      }
+
+      let newDiv = document.createElement("div");
+      for (var i = 0; i < eventuri.length; i++) {
+        let pi = document.createElement("p");
+        let event = JSON.parse(eventuri[i]);  
+        pi.className = "event";
+        let data = new Date(event.data);
+        pi.innerHTML = data.getFullYear() + "/" + data.getMonth() + "/" + data.getDay() + " " + data.getHours() + ":" + data.getMinutes() + ":" + data.getSeconds() + " " + event.nume + " ";
+        console.log(data.getFullYear() + "/" + data.getMonth() + "/" + data.getDay() + " " + data.getHours() + " ");
+        if (event.nume == "keyup" || event.nume == "keydown")
+          pi.innerHTML += event.tasta + " ";
+        else pi.innerHTML += "coord x: " + event.coordx + ", coord y: " + event.coordy;
+        newDiv.appendChild(pi);
+      }
+      let zona = document.getElementById("loguri");
+      zona.appendChild(newDiv);
+    }
+
+    function sterge_logs() {
+      let eventuri = JSON.parse(sessionStorage.getItem('eventuri'));
+      let old_eventuri = document.getElementsByClassName('event');
+      while (old_eventuri[0]) {
+        old_eventuri[0].parentNode.removeChild(old_eventuri[0]);
+      }
+      sessionStorage.removeItem('eventuri');
+    }
+
+  </script>
+
+  <section id="loguri">
+    <br><br><br>
+    <button onclick="afisare_logs()">Afiseaza event loguri</button>
+    <button onclick="sterge_logs()">Sterge event loguri</button>
+  </section>
+
+  <footer>
+    <p>
+      Salut, <%= locals.user %>.
+      <% if (locals.nr_vizite > 1){ %>
+        Ultima oara ai intrat de pe ip-ul <%= locals.adresa_ip %> pe data de <%= locals.ultima_vizita %>.
+        Ai vizitat site-ul de <%= locals.nr_vizite %> ori.
+      <% } else{%>
+        Te-ai logat azi pentru prima oara!
+      <% } %>  
+    </p>
+  </footer>
+  <% } %>
+</body>
+
+</html>

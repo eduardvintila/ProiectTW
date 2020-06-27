@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="utf-8"/>  
+    <meta name="viewport" content="width=device-width, inițial-scale=1.0"> 
+    <link rel="stylesheet" href="stil.css">
+    <title>Arch Linux</title>
+</head>
+
+
+<body>
+  <%- include('navbar', {user: locals.user}) %>
+  <script type="text/javascript" src="logs.js"></script>
+
+  <article>
+    <h1>Arch Linux</h1>
+    <img src="arch.png" alt="arch-logo">
+
+    <p>Arch Linux este cu siguranță o distribuție ce nu este aleasă în mod uzual de către "învățăceii Linux", întrucât
+     procesul de instalare este mult mai dificil decât cel al altor distribuții. Cu toate acestea, îți reocmandăm Arch dacă
+     vrei să descoperi cum funcționează procesul de instalare al unei distribuții Linux, dar mai ales dacă ești pregătit să-ți
+     configurezi sistemul de operare aproape de la 0, întrucât Arch nu include nici măcar o interfață grafică(dekstop environment) preintalată,
+     trebuie să te descurci la început doar cu linia de comandă!
+    Astfel, Arch Linux are următoarele avantaje: </p>
+    
+    <br>
+    
+    <figure>
+        <img src="arch-cmd.png" alt="cmd" width="320" height="150">
+        <figcaption>Arch rulând într-o mașină virtuală</figcaption>
+    </figure>
+     
+    <ul>
+      <li>poți să-l configurezi exact pe placul tău</li>
+      <li>consumă foarte puține resurse, poate fi rulat pe aproape orice sistem</li>
+      <li>documentație excelentă, care explică detaliat procesul de instalare, și multe altele</li>
+      <li>packet manager-ul pacman, cu ajutorul căruia poți instala programe foarte ușor</li>
+      <li>software up-to-date</li>
+    </ul>
+
+    <br><br>
+    <p>Totuși, Arch nu este degeaba o distribuție ce nu este aleasă în mod uzual de către începătorii Linux, întrucât: </p>
+    <ul>
+      <li>procesul de instalare este dificil și necesită atenție sporită(se poate afecta, din neantenție, celălalt sistem de operare instalat astfel încât calculatorul să nu-l mai recunoască!) </li>
+      <li>nu oferă o interfață vizuală, trebuie instalat de către utilizator un Desktop Environment</li>
+      <li>în general, nu este stabil, întrucât majoritatea programelor sunt instalate și configurate de utilizator</li>
+    </ul>
+
+    <br>
+    <p>Așadar, Arch este destinat utilizatorilor ce sunt pregătiți să înfrunte dificultăți în configurarea per total a sistemului.
+        Cu toate acestea, dacă alegi să optezi pentru Arch, vei învață foarte multe despre felul în care se îmbină funcționalitățile unui sistem de operare Linux.</p>
+
+    <p>Pentru instalare, îți recomandăm ghidul din <a href="https://wiki.archlinux.org/index.php/Installation_guide">documentația</a>
+         oficială Arch.</p>
+    
+    <p>Poți, de asemenea, să te folosești și de următorul tutorial:</p>
+    
+    <iframe width="420" height="315"
+    src="https://www.youtube.com/embed/HpskN_jKyhc">
+    </iframe> 
+
+  </article>
+
+  
+</body>
+
+</html> 

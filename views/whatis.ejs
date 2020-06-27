@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="utf-8"/>   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="stil.css">
+    <title>Ce este Linux?</title>
+</head>
+
+<body>
+  <%- include('navbar', {user: locals.user}) %>
+  <script type="text/javascript" src="logs.js"></script>
+  
+  <article>
+    <h1>Ce este Linux?</h1>
+    <img src="thonk-removebg-preview.png" alt="hmmm" width="280" height="200">
+
+    <p> Linux reprezintă nucleul care stă la baza unei familii variate de sisteme de operare ce au devenit populare în ultima perioadă. 
+      Linux se găsește pe o varietate largă de hardware, de la calculatoare personale 
+      la telefoane, servere, supercomputere sau chiar frigidere. 
+    </p>
+
+    <figure>
+        <img src="linus.jpg" alt="linus_torvalds">
+        <figcaption>Linus Torvalds, creatorul nucleului Linux.</figcaption>
+    </figure>
+    
+    <p>Sistemele Linux includ nucleul, bibliotecile de sistem, bibliotecile de dezvoltare și un număr (de obicei destul de ridicat) 
+      de programe utilitare și aplicații, servere grafice (X), sisteme de ferestre si managere de desktop-uri
+      (KDE, Gnome, Blackbox, Fluxbox, Xfce etc.), browsere web (Firefox, Lynx, Konqueror), aplicații și suite de aplicații „de birou” (OpenOffice.org),
+      software de prelucrare grafică (Gimp), software de configurare, servere de web etc.
+    </p>
+
+    <h1>Scurt istoric Linux</h1>
+
+    <p>Dezvoltarea sistemului a fost începută de către inginerul finlandez Linus Torvalds, care inițial dorea să obțină un sistem similar cu Minix,
+      derivat din Unix, dar fără limitările acestuia. Torvalds a scris un kernel care să lucreze pe platformele AT-386 și 484 
+      având la baza conceptele din cartea Operating System a lui Andrew Tanenbaum. 
+    </p>
+
+    <p>Linux a fost dezvoltat sub Licența Publică Generală GNU GPL, astfel încât nu numai Linux însuși,
+      dar și codul său sursă sunt disponibile tuturor celor interesați. 
+    </p>
+
+    <p>Inițial dezvoltat și utilizat de către programatori voluntari, Linux a câștigat suportul industriei IT și al marilor companii ca 
+      IBM, Hewlett-Packard, Dell, SunMicrosystems, Google, Novell sau Nokia, și a depășit ca folosire 
+      versiunile proprietare de Unix. Analiștii atribuie succesul sistemului faptului că este independent de furnizor, 
+      implementarea are un cost scăzut, iar securitatea și fiabilitatea sistemului sunt considerate de către specialiști drept foarte bune.
+    </p>
+
+    <p>Sursa: <a href="https://ro.wikipedia.org/wiki/Linux">Wikipedia</a></p>
+
+  </article>
+</body>
+
+</html>

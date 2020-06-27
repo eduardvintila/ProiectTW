@@ -1,0 +1,23 @@
+<nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/whatis">Ce este Linux?</a></li>
+      <li><a href="/why">De ce Linux?</a></li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Distributii</a>
+        <div class="dropdown-content">
+          <a href="/ubuntu">Ubuntu</a>
+          <a href="/arch">Arch Linux</a>
+        </div>
+      </li>
+      <li class="logo"><img width="50" height="60" src="tux.png" alt="tux"></li>
+      
+      <% if (locals.user != "admin"){ %>
+        <li class="dreapta"><a href="/contact">Contact</a></li>
+        <li class="dreapta"><a href="/login">Login</a></li>
+      <% } else{%>
+        <li class="dreapta"><a href="/mesaje">Vezi mesaje</a></li>
+        <li class="dreapta"><a href="/logout">Logout</a></li>
+      <% } %>
+    </ul>
+</nav>

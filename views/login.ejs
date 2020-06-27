@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="stil.css">
+    <title>Login</title>
+</head>
+
+
+<body>
+  <%- include('navbar', {user: locals.user}) %>
+
+  <section>
+
+    <form name="formular-login" method="POST">
+      <label for="user">User:</label><br>
+      <input type="text" id="user" name="user"><br><br>
+
+      <label for="parola">Parola:</label><br>
+      <input type="password" id="parola" name="parola"><br><br>
+
+      <input id="butontrimitere" type="submit" value="Login!"><br><br>
+
+    </form> 
+
+    
+    
+  </section>
+
+</body>
+
+</html>

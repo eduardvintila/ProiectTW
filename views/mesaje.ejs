@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="stil.css">
+    <title>Contacteaza-ne</title>
+</head>
+
+
+<body>
+  <script type="text/javascript" src="logs.js"></script>
+
+  <script>
+    function stergeMesaj(poz)
+    {
+        let path = "/stergemesaj";
+        fetch(path , {
+          method: 'POST',
+          headers : {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({poz : poz})
+        })
+        .then(response => response.json())
+        .then(data => {
+          window.location.href = data.redirect;
+        })
+    }
+  </script>
+  
+  
+  <%- include('navbar', {user: locals.user}) %>
+  
+  <section>
+    <% if (locals.informatii.length){ %>
+        <% for (var i = 0; i < locals.informatii.length; i++){ %>
+          <p>Nume: <%= locals.informatii[i].nume %></p>
+          <p>Mail: <%= locals.informatii[i].mail %></p>
+          <p>Telefon: <%= locals.informatii[i].telefon %></p>
+          <p>Mesaj: <%= locals.informatii[i].mesaj %></p>
+          <button onclick = "stergeMesaj('<%= i %>')">Sterge!</button>
+          <br><br><br> 
+        <% } %> 
+    <% } else{%>
+        <p>Niciun mesaj disponibil!</p>
+    <% } %>
+  </section>
+
+</body>
+
+</html>
