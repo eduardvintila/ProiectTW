@@ -1,4 +1,5 @@
-# ProiectTW
+# ProiectTW - Sisteme de operare Linux
 Rulare:
 
-  node index.js
+	node index.js
+	
